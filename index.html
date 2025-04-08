@@ -1,0 +1,2389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersafe Legal - Your Ally Against Online Scams</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+:root {
+    --primary-color: #0E1A35;
+    --secondary-color: #3182ce;
+    --accent-color: #690F3B;
+    --light-color: #ebf8ff;
+    --dark-color: #000000;
+    --text-color: #2d3748;
+    --light-text: #f7fafc;
+    --gray-light: #edf2f7;
+    --gray-medium: #e2e8f0;
+    --success-color: #38a169;
+    --warning-color: #8a33b2;
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.05);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: #f8fafc;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+}
+
+section {
+    padding: 80px 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    font-size: 1rem;
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.primary-btn:hover {
+    background-color: #8a33b2;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(white);
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    font-size: 1.1rem;
+    color: white;
+}
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.preloader p {
+    color: white;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.shield-spinner {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.shield {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/shield-icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: pulse 2s infinite;
+}
+
+.spinner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background-color: rgba(255,255,255,0.95);
+    box-shadow: var(--shadow-sm);
+}
+
+.navbar.scrolled {
+    padding: 15px 0;
+    background-color: rgba(255,255,255,0.98);
+    box-shadow: var(--shadow-md);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    margin: 0 15px;
+    font-weight: 500;
+    color: var(--text-color);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.emergency-btn {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-left: 15px;
+    transition: var(--transition);
+}
+
+.emergency-btn:hover {
+    background-color: #8a33b2;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    color: white;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/hero-pattern.png') center/cover;
+    opacity: 0.1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-title span {
+    color: var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-illustration {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    max-width: 600px;
+    z-index: 1;
+}
+
+.hero-illustration img {
+    width: 100%;
+    height: auto;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.scrolling-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.mouse {
+    width: 25px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 5px;
+}
+
+.wheel {
+    width: 5px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: 5px;
+    animation: scroll 2s infinite;
+}
+
+.arrow {
+    width: 15px;
+    height: 15px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    margin: 0 auto;
+}
+
+@keyframes scroll {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(10px); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-20px) translateX(-50%); }
+    60% { transform: translateY(-10px) translateX(-50%); }
+}
+
+/* Stats Section */
+.stats-section {
+    background-color: white;
+    padding: 60px 0;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    z-index: 5;
+    margin-top: -50px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #4a5568;
+}
+
+/* Services Section */
+.services-section {
+    background-color: var(--light-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.services-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/wave-bg.svg') center/cover;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background-color: var(--light-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.service-card:hover .service-icon {
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.service-card p {
+    color: #4a5568;
+    margin-bottom: 20px;
+}
+
+.wave-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .wave-hover {
+    transform: scaleX(1);
+}
+
+/* Case Studies Section */
+.case-studies-section {
+    background-color: white;
+    position: relative;
+}
+
+.comic-strip-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.comic-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.comic-nav-btn {
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.comic-nav-btn:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.comic-progress {
+    flex-grow: 1;
+    height: 4px;
+    background-color: var(--gray-medium);
+    margin: 0 20px;
+    border-radius: 2px;
+    position: relative;
+}
+
+.comic-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 33.33%;
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.comic-strip {
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    background-color: white;
+}
+
+.comic-panel {
+    min-width: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.comic-panel.active {
+    transform: translateX(0);
+}
+
+.comic-panel:not(.active) {
+    display: none;
+}
+
+.panel-image {
+    flex: 1;
+    position: relative;
+    padding: 20px;
+    background-color: #f7fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: var(--shadow-sm);
+}
+
+.panel-tooltip {
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    animation: pulse 2s infinite;
+    pointer-events: none;
+}
+
+.panel-text {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.panel-text h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.panel-text p {
+    margin-bottom: 25px;
+    color: #4a5568;
+}
+
+.learn-more-btn {
+    align-self: flex-start;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.learn-more-btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.case-study-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.case-study-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: white;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.case-study-modal.active .modal-content {
+    transform: scale(1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    transform: rotate(90deg);
+    background-color: #8a33b2;
+}
+
+.modal-body {
+    padding: 40px;
+    overflow-y: auto;
+    max-height: calc(90vh - 80px);
+}
+
+/* Resources Section */
+.resources-section {
+    background-color: var(--light-color);
+}
+
+.resource-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    margin: 0 5px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    color: #4a5568;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--accent-color);
+}
+
+.tab-btn:hover:not(.active) {
+    color: var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.resource-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.resource-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--light-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.resource-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.resource-card p {
+    margin-bottom: 20px;
+    color: #4a5568;
+    flex-grow: 1;
+}
+
+.download-btn {
+    align-self: flex-start;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.download-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: white;
+}
+
+.testimonial-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial-slides {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.testimonial-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.testimonial-slide.active {
+    opacity: 1;
+}
+
+.testimonial-content {
+    background-color: var(--light-color);
+    border-radius: 10px;
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.quote-icon {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 3rem;
+    color: rgba(0,0,0,0.1);
+}
+
+.testimonial-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.client-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid var(--primary-color);
+}
+
+.author-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.author-info p {
+    font-size: 0.9rem;
+    color: #718096;
+    margin: 0;
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Emergency Section */
+.emergency-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.emergency-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.emergency-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.emergency-card {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 30px;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.emergency-card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255,255,255,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.emergency-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--warning-color);
+}
+
+.emergency-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.emergency-card p {
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.emergency-number {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-top: 10px;
+    transition: var(--transition);
+}
+
+.emergency-number:hover {
+    color: var(--warning-color);
+}
+
+.chat-btn, .case-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--warning-color);
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.chat-btn:hover, .case-btn:hover {
+    background-color: #8a33b2;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: white;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group:nth-child(3), 
+.form-group:nth-child(5) {
+    grid-column: span 2;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gray-medium);
+    border-radius: 5px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    grid-column: span 2;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.info-card {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-sm);
+}
+
+.info-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.info-card:hover .info-icon {
+    background-color: var(--accent-color);
+    transform: rotate(15deg);
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.info-card p {
+    color: #4a5568;
+    margin: 0;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 80px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px 22px;
+    margin-bottom: 60px;
+}
+
+.footer-col h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: white;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.footer-logo {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-col.about p {
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+    opacity: 1;
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 0.9rem;
+}
+
+.newsletter-form button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+    background-color: #8a33b2;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    margin: 10px 0;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+.security-badges {
+    display: flex;
+    gap: 15px;
+}
+
+.security-badges img {
+    height: 30px;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-illustration {
+        width: 45%;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .comic-panel {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: var(--shadow-md);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+    
+    .navbar .nav-links.active {
+        transform: translateY(0);
+    }
+    
+    .nav-link {
+        margin: 10px 0;
+    }
+    
+    .emergency-btn {
+        margin: 15px 0 0;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .hero {
+        min-height: 600px;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .hero-btns {
+        justify-content: center;
+    }
+    
+    .hero-illustration {
+        display: none;
+    }
+    
+    .stats-section {
+        margin-top: -30px;
+    }
+    
+    .stat-card {
+        min-width: 150px;
+        padding: 15px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-group:nth-child(3), 
+    .form-group:nth-child(5) {
+        grid-column: span 1;
+    }
+    
+    .submit-btn {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        min-width: 120px;
+        padding: 10px;
+    }
+    
+    .tab-content.active {
+        grid-template-columns: 1fr;
+    }
+    
+    .emergency-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-col {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form input {
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .newsletter-form button {
+        border-radius: 5px;
+        padding: 10px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+    }
+    
+    .security-badges {
+        margin-top: 15px;
+    }
+}
+
+
+
+.res-sec{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer-links a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex
+;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="shield-spinner">
+            <div class="shield"></div>
+            <div class="spinner"></div>
+        </div>
+        <p>Securing Your Connection...</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="assets/logo.svg" class="logo-img">
+                <span>Cybersafe Legal</span>
+            </a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#services" class="nav-link">Our Services</a>
+                <a href="#case-studies" class="nav-link">Case Studies</a>
+                <a href="#resources" class="nav-link">Resources</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#help" class="nav-link emergency-btn">Emergency Help <i class="fas fa-bell"></i></a>
+            </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Shield Against <span class="typing-text"></span></h1>
+                <p class="hero-subtitle">We stand with victims of cybercrime, providing legal expertise and emotional support to help you fight back.</p>
+                <div class="hero-btns">
+                    <a href="#help" class="btn primary-btn">I Need Help Now</a>
+                    <a href="#case-studies" class="btn secondary-btn">Learn From Others' Stories</a>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <img src="assets/hero-illustration.svg" alt="Cybercrime protection" class="floating">
+            </div>
+        </div>
+        <div class="scrolling-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow"></div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stat-card">
+                <div class="stat-number" data-count="500">0</div>
+                <div class="stat-label">Cases Resolved</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="95">0</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="24">0</div>
+                <div class="stat-label">Hour Support</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="1">0</div>
+                <div class="stat-label">Million Recovered</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">How We Protect You</h2>
+            <p class="section-subtitle">Comprehensive services tailored to cybercrime victims</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Legal Representation</h3>
+                    <p>Expert attorneys specializing in cybercrime cases to fight for your rights.</p>
+                    <div class="wave-hover"></div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Victim Advocacy</h3>
+                    <p>We stand by you through the entire process, ensuring your voice is heard.</p>
+                    <div class="wave-hover"></div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Victim Advocacy</h3>
+                    <p>We stand by you through the entire process, ensuring your voice is heard.</p>
+                    <div class="wave-hover"></div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Victim Advocacy</h3>
+                    <p>We stand by you through the entire process, ensuring your voice is heard.</p>
+                    <div class="wave-hover"></div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Financial Recovery</h3>
+                    <p>Strategies to recover lost funds and minimize further damage.</p>
+                    <div class="wave-hover"></div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Emotional Support</h3>
+                    <p>Counseling and support groups to help you through this challenging time.</p>
+                    <div class="wave-hover"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section with Comics -->
+    <section id="case-studies" class="case-studies-section">
+        <div class="container">
+            <h2 class="section-title">Real Victim Stories</h2>
+            <p class="section-subtitle">Learn from others' experiences through our interactive case studies</p>
+            
+            <div class="comic-strip-container">
+                <div class="comic-navigation">
+                    <button class="comic-nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="comic-progress"></div>
+                    <button class="comic-nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="comic-strip">
+                    <!-- Comic Panel 1 -->
+                    <div class="comic-panel active">
+                        <div class="panel-image">
+                            <img src="assets/comic1.svg" alt="Phishing scam comic">
+                            <div class="panel-tooltip" style="top: 30%; left: 25%;">Click to see what happened next</div>
+                        </div>
+                        <div class="panel-text">
+                            <h3>The Phishing Email</h3>
+                            <p>Sarah received an email that appeared to be from her bank, asking her to verify her account details...</p>
+                            <button class="learn-more-btn" data-case="1">Read Full Case Study</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Comic Panel 2 -->
+                    <div class="comic-panel">
+                        <div class="panel-image">
+                            <img src="assets/comic2.svg" alt="Romance scam comic">
+                            <div class="panel-tooltip" style="top: 60%; left: 70%;">This seemed too good to be true</div>
+                        </div>
+                        <div class="panel-text">
+                            <h3>The Online Romance</h3>
+                            <p>Mark thought he found love online, but after months of chatting and sending money for "emergencies"...</p>
+                            <button class="learn-more-btn" data-case="2">Read Full Case Study</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Comic Panel 3 -->
+                    <div class="comic-panel">
+                        <div class="panel-image">
+                            <img src="assets/comic3.svg" alt="Tech support scam comic">
+                            <div class="panel-tooltip" style="top: 40%; left: 50%;">The pop-up looked official</div>
+                        </div>
+                        <div class="panel-text">
+                            <h3>Fake Tech Support</h3>
+                            <p>A pop-up warned Linda her computer was infected. The helpful "technician" who called seemed legitimate...</p>
+                            <button class="learn-more-btn" data-case="3">Read Full Case Study</button>
+                        </div>
+                    </div>
+
+                    <div class="comic-panel">
+                        <div class="panel-image">
+                            <img src="assets/comic2.svg" alt="Romance scam comic">
+                            <div class="panel-tooltip" style="top: 60%; left: 70%;">This seemed too good to be true</div>
+                        </div>
+                        <div class="panel-text">
+                            <h3>The Online Romance</h3>
+                            <p>Mark thought he found love online, but after months of chatting and sending money for "emergencies"...</p>
+                            <button class="learn-more-btn" data-case="2">Read Full Case Study</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study-modal">
+                <div class="modal-content">
+                    <button class="close-modal">&times;</button>
+                    <div class="modal-body">
+                        <!-- Content will be loaded via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources-section">
+        <div class="container">
+            <h2 class="section-title">Educational Resources</h2>
+            <p class="section-subtitle">Arm yourself with knowledge to prevent and combat cybercrime</p>
+            <div class="res-sec">
+                <div class="resource-tabs">
+                    <button class="tab-btn active" data-tab="guides">Guides</button>
+                    <button class="tab-btn" data-tab="videos">Videos</button>
+                    <button class="tab-btn" data-tab="tools">Safety Tools</button>
+                    <button class="tab-btn" data-tab="faq">FAQ</button>
+                </div>
+                
+                <div class="tab-content active" data-tab="guides">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>Scam Identification Handbook</h3>
+                        <p>Learn to recognize the most common online scams before they trap you.</p>
+                        <a href="#" class="download-btn">Download <i class="fas fa-download"></i></a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-list-check"></i>
+                        </div>
+                        <h3>Post-Scam Action Plan</h3>
+                        <p>Step-by-step guide on what to do immediately after falling victim.</p>
+                        <a href="#" class="download-btn">Download <i class="fas fa-download"></i></a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Legal Rights Handbook</h3>
+                        <p>Understand your legal rights as a cybercrime victim.</p>
+                        <a href="#" class="download-btn">Download <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+                
+                <div class="tab-content" data-tab="videos">
+                    <!-- Video content would go here -->
+                </div>
+            </div>
+            <!-- Other tab contents would go here -->
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Voices of Recovery</h2>
+            <p class="section-subtitle">What our clients say about their journey with us</p>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-slides">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-text">After losing $15,000 to an investment scam, I felt hopeless. Cybersafe Legal not only helped recover most of my funds but also provided emotional support through the entire process.</p>
+                            <div class="testimonial-author">
+                                <img src="assets/client1.jpg" alt="Client" class="client-img">
+                                <div class="author-info">
+                                    <h4>Michael T.</h4>
+                                    <p>Investment Scam Victim</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <!-- Another testimonial -->
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <!-- Another testimonial -->
+                    </div>
+                </div>
+                
+                <div class="testimonial-dots">
+                    <!-- Navigation dots would go here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Help Section -->
+    <section id="help" class="emergency-section">
+        <div class="container">
+            <div class="emergency-content">
+                <h2 class="section-title">Need Immediate Help?</h2>
+                <p class="section-subtitle">If you've been victimized by cybercrime, we're here for you 24/7</p>
+                
+                <div class="emergency-cards">
+                    <div class="emergency-card hotline">
+                        <div class="emergency-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Emergency Hotline</h3>
+                        <p>Call our 24/7 support line for immediate assistance</p>
+                        <a href="tel:+18005551234" class="emergency-number">1-800-555-1234</a>
+                    </div>
+                    
+                    <div class="emergency-card chat">
+                        <div class="emergency-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Live Chat</h3>
+                        <p>Connect instantly with a support specialist</p>
+                        <button class="chat-btn">Start Chat Now</button>
+                    </div>
+                    
+                    <div class="emergency-card form">
+                        <div class="emergency-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Case Submission</h3>
+                        <p>Submit your case details for a rapid response</p>
+                        <button class="case-btn">Submit Your Case</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">We're here to answer your questions and provide support</p>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Your Case Type</option>
+                            <option value="legal">Romance Scams</option>
+                            <option value="support">Investment Scams</option>
+                            <option value="resources">Phishing</option>
+                            <option value="resources">Identity theft</option>
+                            <option value="other">Others</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Case Description" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>JK Lakshmipat University</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>General Inquiries: +91 90248 77439<br>Emergency Hotline: +91 9521154453</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>info@cybersafelegal.com<br>support@cybersafelegal.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about">
+                    <img src="assets/logo-white.svg" alt="Cybersafe Legal" class="footer-logo">
+                    <p>Cybersafe Legal is dedicated to supporting victims of online scams through legal expertise, resources, and compassionate advocacy.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#case-studies">Case Studies</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col legal">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-file-pdf"></i> IT Act 2000</a></li>
+                        <li><a href="#"><i class="fas fa-file-pdf"></i> Data Protection Bill</a></li>
+                        <li><a href="#"><i class="fas fa-file-pdf"></i> Cyber Crime Reporting</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> Digital Rights Handbook</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col newsletter">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for the latest scam alerts and protection tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Cybersafe Legal. All rights reserved.</p>
+                <div class="security-badges">
+                    <img src="assets/ssl-badge.svg" alt="SSL Secure">
+                    <img src="assets/trust-badge.svg" alt="Trusted Site">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Preloader
+    const preloader = document.querySelector('.preloader');
+    window.addEventListener('load', function() {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    });
+
+    // Typing animation in hero section
+    const typingText = document.querySelector('.typing-text');
+    const words = ["Phishing Scams", "Identity Theft", "Online Fraud", "Romance Scams", "Cybercrime"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let isEnd = false;
+
+    function type() {
+        const currentWord = words[wordIndex];
+        const currentChar = currentWord.substring(0, charIndex);
+        typingText.textContent = currentChar;
+
+        if (!isDeleting && charIndex < currentWord.length) {
+            // Typing
+            charIndex++;
+            setTimeout(type, 100);
+        } else if (isDeleting && charIndex > 0) {
+            // Deleting
+            charIndex--;
+            setTimeout(type, 50);
+        } else {
+            // Change word
+            isDeleting = !isDeleting;
+            if (!isDeleting) {
+                wordIndex = (wordIndex + 1) % words.length;
+            }
+            setTimeout(type, 1000);
+        }
+    }
+
+    // Start typing animation
+    setTimeout(type, 1500);
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Animate stats counting
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const statsSection = document.querySelector('.stats-section');
+
+    function animateStats() {
+        const sectionPosition = statsSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+
+        if (sectionPosition < screenPosition) {
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const increment = target / 50;
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        clearInterval(timer);
+                        current = target;
+                    }
+                    stat.textContent = Math.floor(current) + (stat.getAttribute('data-count') === '95' ? '%' : '+');
+                }, 20);
+            });
+
+            // Remove event listener after animation
+            window.removeEventListener('scroll', animateStats);
+        }
+    }
+
+    window.addEventListener('scroll', animateStats);
+
+    // Comic strip navigation
+    const comicPanels = document.querySelectorAll('.comic-panel');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const comicProgress = document.querySelector('.comic-progress');
+    let currentPanel = 0;
+
+    function showPanel(index) {
+        comicPanels.forEach(panel => panel.classList.remove('active'));
+        comicPanels[index].classList.add('active');
+        
+        // Update progress bar
+        const progress = ((index + 1) / comicPanels.length) * 100;
+        comicProgress.style.setProperty('--progress', progress + '%');
+        
+        // Update button states
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === comicPanels.length - 1;
+    }
+
+    prevBtn.addEventListener('click', function() {
+        if (currentPanel > 0) {
+            currentPanel--;
+            showPanel(currentPanel);
+        }
+    });
+
+    nextBtn.addEventListener('click', function() {
+        if (currentPanel < comicPanels.length - 1) {
+            currentPanel++;
+            showPanel(currentPanel);
+        }
+    });
+
+    // Initialize first panel
+    showPanel(0);
+
+    // Case study modal
+    const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
+    const caseStudyModal = document.querySelector('.case-study-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const modalBody = document.querySelector('.modal-body');
+
+    // Case study data
+    const caseStudies = {
+        1: {
+            title: "The Phishing Email Scam",
+            content: `
+                <h2>The Phishing Email Scam</h2>
+                <div class="case-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Initial Contact</h4>
+                            <p>Sarah received an email that appeared to be from her bank, asking her to verify her account details due to "suspicious activity." The email looked legitimate, complete with the bank's logo and branding.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Fake Website</h4>
+                            <p>She clicked the link which took her to a website that looked identical to her bank's login page. Without thinking, she entered her username and password.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>The Aftermath</h4>
+                            <p>Within hours, the scammers had emptied her savings account and opened several credit cards in her name. Sarah felt violated and didn't know where to turn.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Our Intervention</h4>
+                            <p>Cybersafe Legal helped Sarah freeze her accounts, file police reports, and work with the bank to recover a portion of her funds. We also helped her implement stronger security measures.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-outcome">
+                    <h3>Case Outcome</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> 65% of stolen funds recovered</li>
+                        <li><i class="fas fa-check-circle"></i> Fraudulent credit cards closed</li>
+                        <li><i class="fas fa-check-circle"></i> Credit monitoring established</li>
+                        <li><i class="fas fa-check-circle"></i> Scammer's operation identified and reported</li>
+                    </ul>
+                </div>
+                <div class="case-lessons">
+                    <h3>Key Lessons</h3>
+                    <div class="lesson-cards">
+                        <div class="lesson-card">
+                            <i class="fas fa-link"></i>
+                            <p>Always check the URL before entering login credentials</p>
+                        </div>
+                        <div class="lesson-card">
+                            <i class="fas fa-envelope"></i>
+                            <p>Banks will never ask for sensitive information via email</p>
+                        </div>
+                        <div class="lesson-card">
+                            <i class="fas fa-lock"></i>
+                            <p>Use two-factor authentication for all financial accounts</p>
+                        </div>
+                    </div>
+                </div>
+            `,
+            image: "assets/comic1-full.svg"
+        },
+        2: {
+            title: "The Online Romance Scam",
+            content: `
+                <h2>The Online Romance Scam</h2>
+                <div class="case-timeline">
+                    <!-- Timeline content would go here -->
+                </div>
+            `,
+            image: "assets/comic2-full.svg"
+        },
+        3: {
+            title: "The Fake Tech Support Scam",
+            content: `
+                <h2>The Fake Tech Support Scam</h2>
+                <div class="case-timeline">
+                    <!-- Timeline content would go here -->
+                </div>
+            `,
+            image: "assets/comic3-full.svg"
+        }
+    };
+
+    learnMoreBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const caseId = this.getAttribute('data-case');
+            const caseData = caseStudies[caseId];
+            
+            modalBody.innerHTML = `
+                <div class="modal-comic">
+                    <img src="${caseData.image}" alt="${caseData.title}">
+                </div>
+                <div class="modal-text">
+                    ${caseData.content}
+                </div>
+            `;
+            
+            caseStudyModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    closeModal.addEventListener('click', function() {
+        caseStudyModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+
+    // Close modal when clicking outside
+    caseStudyModal.addEventListener('click', function(e) {
+        if (e.target === caseStudyModal) {
+            caseStudyModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Resource tabs
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const tabId = this.getAttribute('data-tab');
+            
+            // Update active tab button
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show corresponding content
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.getAttribute('data-tab') === tabId) {
+                    content.classList.add('active');
+                }
+            });
+        });
+    });
+
+    // Testimonial slider
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    let currentTestimonial = 0;
+
+    function showTestimonial(index) {
+        testimonialSlides.forEach(slide => slide.classList.remove('active'));
+        testimonialSlides[index].classList.add('active');
+    }
+
+    // Auto-rotate testimonials
+    setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+        showTestimonial(currentTestimonial);
+    }, 5000);
+
+    // Back to top button
+    const backToTopBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Animate elements on scroll
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.service-card, .resource-card, .info-card');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (elementPosition < screenPosition) {
+                element.style.animation = 'fadeIn 0.5s ease forwards';
+            }
+        });
+    };
+
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Run once on page load
+
+    // Tooltip hover effects for comic panels
+    const panelTooltips = document.querySelectorAll('.panel-tooltip');
+    panelTooltips.forEach(tooltip => {
+        tooltip.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    });
+
+    // Emergency button pulse animation
+    const emergencyBtns = document.querySelectorAll('.emergency-btn, .chat-btn, .case-btn');
+    emergencyBtns.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.animation = 'pulse 1s infinite';
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            this.style.animation = 'none';
+        });
+    });
+
+    // Form submission
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('.submit-btn');
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                
+                // Reset form
+                setTimeout(() => {
+                    this.reset();
+                    submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+                    submitBtn.disabled = false;
+                    
+                    // Show success message
+                    alert('Thank you for your message! We will get back to you soon.');
+                }, 2000);
+            }, 1500);
+        });
+    }
+});
+    </script>
+</body>
+</html>
