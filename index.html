@@ -50,6 +50,60 @@ body {
     
 }
 
+/* FAQ Section */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+gap: 30px;}
+
+.faq-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+    width: 72rem;
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.faq-answer {
+    display: none;
+    padding: 20px;
+    font-size: 1rem;
+    color: #4a5568;
+    border-top: 1px solid var(--gray-medium);
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
 section {
     padding: 80px 0;
 }
@@ -786,6 +840,11 @@ a {
     grid-template-columns: repeat(3, minmax(300px, 1fr));
     gap: 30px;
 }
+.faqq{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+    gap: 30px;
+}
 
 .resource-card {
     background-color: white;
@@ -1297,6 +1356,71 @@ textarea {
     transform: translateY(-5px);
 }
 
+/* Hover Card Styling */
+.hover-card {
+    position: relative;
+    width: 390px;
+    height: 350px;
+    perspective: 1000px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.hover-card .card-front,
+.hover-card .card-back {
+    position: absolute;
+    width: 88%;
+    height: 86%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.6s ease;
+}
+
+.hover-card .card-front {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 75px 10px;
+}
+
+.hover-card .card-front h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.hover-card .card-front p {
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+.hover-card .card-back {
+    background-color: var(--light-color);
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.hover-card .card-back img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.hover-card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.hover-card:hover .card-back {
+    transform: rotateY(0);
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -1595,6 +1719,7 @@ textarea {
 .res-sec{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 
@@ -1845,6 +1970,68 @@ textarea {
                     <button class="tab-btn" data-tab="faq">FAQ</button>
                 </div>
                 
+                <div class="tab-content" data-tab="tools">
+                    <div class="resource-card hover-card">
+                        <div class="card-front">
+                            <h3>Phishing Scams</h3>
+                            <p>Learn how to identify and avoid phishing scams that trick you into revealing sensitive information.</p>
+                        </div>
+                        <div class="card-back">
+                            <img src="assets/comic1.svg" alt="Phishing Comic">
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card hover-card">
+                        <div class="card-front">
+                            <h3>Password Security</h3>
+                            <p>Understand the importance of strong passwords and how to create ones that are hard to crack.</p>
+                        </div>
+                        <div class="card-back">
+                            <img src="assets/comic2.svg" alt="Password Security Comic">
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card hover-card">
+                        <div class="card-front">
+                            <h3>Safe Online Transactions</h3>
+                            <p>Discover best practices for secure online shopping and protecting your financial data.</p>
+                        </div>
+                        <div class="card-back">
+                            <img src="assets/comic3.svg" alt="Online Transactions Comic">
+                        </div>
+                    </div>
+
+                    <div class="resource-card hover-card">
+                        <div class="card-front">
+                            <h3>Phishing Scams</h3>
+                            <p>Learn how to identify and avoid phishing scams that trick you into revealing sensitive information.</p>
+                        </div>
+                        <div class="card-back">
+                            <img src="assets/comic1.svg" alt="Phishing Comic">
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card hover-card">
+                        <div class="card-front">
+                            <h3>Password Security</h3>
+                            <p>Understand the importance of strong passwords and how to create ones that are hard to crack.</p>
+                        </div>
+                        <div class="card-back">
+                            <img src="assets/comic2.svg" alt="Password Security Comic">
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card hover-card">
+                        <div class="card-front">
+                            <h3>Safe Online Transactions</h3>
+                            <p>Discover best practices for secure online shopping and protecting your financial data.</p>
+                        </div>
+                        <div class="card-back">
+                            <img src="assets/comic3.svg" alt="Online Transactions Comic">
+                        </div>
+                    </div>
+                </div>
+            
                 <div class="tab-content active" data-tab="guides">
                     <div class="resource-card">
                         <div class="resource-icon">
@@ -1876,6 +2063,65 @@ textarea {
                 
                 <div class="tab-content" data-tab="videos">
                     <!-- Video content would go here -->
+                </div>
+
+                <div class="tab-content" data-tab="faq" id="faq-section">
+                    <div class="faq-container">
+                        <!-- FAQ 1 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What is phishing, and how can I avoid it?</h3>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Phishing is a type of cyberattack where attackers trick you into revealing sensitive information, such as passwords or credit card details, by pretending to be a trusted entity. Avoid clicking on suspicious links, verify the sender's email address, and enable two-factor authentication for your accounts.</p>
+                            </div>
+                        </div>
+                
+                        <!-- FAQ 2 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What should I do if I fall victim to a cyber scam?</h3>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>If you fall victim to a cyber scam, immediately report the incident to your local authorities or the cybercrime portal. Change your passwords, inform your bank, and contact a legal expert for assistance in recovering your losses.</p>
+                            </div>
+                        </div>
+                
+                        <!-- FAQ 3 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How can I secure my online accounts?</h3>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Use strong, unique passwords for each account, enable two-factor authentication, and regularly update your passwords. Avoid using public Wi-Fi for sensitive transactions and monitor your accounts for suspicious activity.</p>
+                            </div>
+                        </div>
+                
+                        <!-- FAQ 4 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What services does Cybersafe Legal provide?</h3>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Cybersafe Legal provides legal assistance, case filing, data recovery, and preventive measures for victims of cybercrime, including phishing, identity theft, and online fraud.</p>
+                            </div>
+                        </div>
+                
+                        <!-- FAQ 5 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How do I report a cybercrime?</h3>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>You can report a cybercrime by visiting the official government cybercrime portal or contacting your local police station. Our team can guide you through the process and help you file a formal complaint.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Other tab contents would go here -->
@@ -1976,7 +2222,7 @@ textarea {
                         </div>
                         <h3>Case Submission</h3>
                         <p>Submit your case details for a rapid response</p>
-                        <button class="case-btn">Submit Your Case</button>
+                        <button class="case-btn"><a href="#contact">Submit Your Case</a></button>
                     </div>
                 </div>
             </div>
@@ -2086,7 +2332,7 @@ textarea {
                         <li><a href="#"><i class="fas fa-file-pdf"></i> Data Protection Bill</a></li>
                         <li><a href="#"><i class="fas fa-file-pdf"></i> Cyber Crime Reporting</a></li>
                         <li><a href="#"><i class="fas fa-book"></i> Digital Rights Handbook</a></li>
-                        <li><a href="#"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                        <li><a href="#faq-section"><i class="fas fa-question-circle"></i> FAQ</a></li>
                     </ul>
                 </div>
                 
@@ -2543,6 +2789,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
 });
     </script>
 </body>
