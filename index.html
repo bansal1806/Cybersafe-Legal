@@ -130,7 +130,7 @@ a {
     max-width: 700px;
     margin: 0 auto 50px;
     font-size: 1.1rem;
-    color: white;
+
 }
 
 /* Preloader */
@@ -417,7 +417,12 @@ a {
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
+.cont{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
 .stat-card {
     text-align: center;
     padding: 20px;
@@ -1309,6 +1314,109 @@ textarea {
     }
 }
 
+
+/* Testimonial Section */
+.testimonials-section {
+    background-color: var(--light-color);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.testimonial-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-slides {
+    position: relative;
+    overflow: hidden;
+    height: 370px;
+    width: 50rem;
+}
+
+.testimonial-slide {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.testimonial-slide.active {
+    left: 0;
+    opacity: 1;
+}
+
+.testimonial-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+.quote-icon {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.client-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.author-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.author-info p {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--gray-medium);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--primary-color);
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
     .hero-title {
@@ -1775,47 +1883,67 @@ textarea {
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials-section">
-        <div class="container">
-            <h2 class="section-title">Voices of Recovery</h2>
-            <p class="section-subtitle">What our clients say about their journey with us</p>
+    <!-- <section class="testimonials section">
+        
+    </section> -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container cont">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Hear from those we've helped</p>
             
             <div class="testimonial-slider">
                 <div class="testimonial-slides">
+                    <!-- Testimonial 1 -->
                     <div class="testimonial-slide active">
                         <div class="testimonial-content">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="testimonial-text">After losing $15,000 to an investment scam, I felt hopeless. Cybersafe Legal not only helped recover most of my funds but also provided emotional support through the entire process.</p>
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p class="testimonial-text">After losing ₹15 lakh to an online trading scam, I thought my money was gone forever. Cybersafe Legal not only helped me file the proper complaints but guided me through the entire recovery process. Today, I've recovered 80% of my funds thanks to their expertise.</p>
                             <div class="testimonial-author">
-                                <img src="assets/client1.jpg" alt="Client" class="client-img">
+                                <img src="assets/client1.jpg" alt="Client 1" class="client-img">
                                 <div class="author-info">
-                                    <h4>Michael T.</h4>
-                                    <p>Investment Scam Victim</p>
+                                    <h4>Rahul Sharma</h4>
+                                    <p>Mumbai</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+                    <!-- Testimonial 2 -->
                     <div class="testimonial-slide">
-                        <!-- Another testimonial -->
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p class="testimonial-text">As a small business owner, I didn't realize how vulnerable we were to cyber threats until we experienced a data breach. Cybersafe Legal helped us navigate the legal requirements, communicate with affected customers, and implement stronger security measures. Their preventive guidance has been invaluable.</p>
+                            <div class="testimonial-author">
+                                <img src="assets/client2.jpg" alt="Client 2" class="client-img">
+                                <div class="author-info">
+                                    <h4>Arjun Mehta</h4>
+                                    <p>Banglore</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
+                    <!-- Testimonial 3 -->
                     <div class="testimonial-slide">
-                        <!-- Another testimonial -->
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p class="testimonial-text">When false allegations about my business started circulating on social media, it was affecting our reputation and sales. The team at Cybersafe Legal acted swiftly to have the content removed and pursued legal action against the perpetrators. Their knowledge of IT Act provisions was impressive.</p>
+                            <div class="testimonial-author">
+                                <img src="assets/client3.jpg" alt="Client 3" class="client-img">
+                                <div class="author-info">
+                                    <h4>Priya Patel</h4>
+                                    <p>Delhi NCR</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
                 <div class="testimonial-dots">
-                    <!-- Navigation dots would go here -->
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
                 </div>
             </div>
-
-            
         </div>
     </section>
-
     <!-- Emergency Help Section -->
     <section id="help" class="emergency-section">
         <div class="container">
@@ -2385,6 +2513,36 @@ textarea {
             }, 1500);
         });
     }
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            dots[i].classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+                dots[i].classList.add('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            currentSlide = i;
+            showSlide(currentSlide);
+        });
+    });
+
+    setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
 });
     </script>
 </body>
