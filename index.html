@@ -6,9 +6,9 @@
     <title>Cybersafe Legal - Your Ally Against Online Scams</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
     <style>
-        /* Base Styles */
-:root {
+        :root {
     --primary-color: #0E1A35;
     --secondary-color: #3182ce;
     --accent-color: #690F3B;
@@ -592,7 +592,6 @@ a {
     background-color: white;
     position: relative;
 }
-
 .comic-strip-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -632,6 +631,7 @@ a {
     margin: 0 20px;
     border-radius: 2px;
     position: relative;
+    overflow: hidden;
 }
 
 .comic-progress::after {
@@ -639,11 +639,11 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 33.33%;
     height: 100%;
     background-color: var(--accent-color);
+    width: var(--progress-width, 33.33%);
     border-radius: 2px;
-    transition: var(--transition);
+    transition: width 0.4s ease-in-out;
 }
 
 .comic-strip {
@@ -656,16 +656,12 @@ a {
 
 .comic-panel {
     min-width: 100%;
-    display: flex;
+    display: none;
     transition: transform 0.5s ease;
 }
 
 .comic-panel.active {
-    transform: translateX(0);
-}
-
-.comic-panel:not(.active) {
-    display: none;
+    display: flex;
 }
 
 .panel-image {
@@ -687,13 +683,19 @@ a {
 
 .panel-tooltip {
     position: absolute;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 0.8rem;
     animation: pulse 2s infinite;
     pointer-events: none;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
 }
 
 .panel-text {
@@ -732,7 +734,6 @@ a {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
-
 .case-study-modal {
     position: fixed;
     top: 0;
@@ -1441,7 +1442,7 @@ textarea {
 
 /* Testimonial Section */
 .testimonials-section {
-    background-color: var(--light-color);
+    
     padding: 80px 0;
     text-align: center;
 }
@@ -1734,6 +1735,7 @@ textarea {
     gap: 0.5rem;
 }
 
+       
     </style>
 </head>
 <body>
@@ -1892,10 +1894,10 @@ textarea {
                     <div class="comic-progress"></div>
                     <button class="comic-nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                
+            
                 <div class="comic-strip">
                     <!-- Comic Panel 1 -->
-                    <div class="comic-panel active">
+                    <div class="comic-panel">
                         <div class="panel-image">
                             <img src="assets/comic1.svg" alt="Phishing scam comic">
                             <div class="panel-tooltip" style="top: 30%; left: 25%;">Click to see what happened next</div>
@@ -1906,7 +1908,7 @@ textarea {
                             <button class="learn-more-btn" data-case="1">Read Full Case Study</button>
                         </div>
                     </div>
-                    
+            
                     <!-- Comic Panel 2 -->
                     <div class="comic-panel">
                         <div class="panel-image">
@@ -1919,7 +1921,7 @@ textarea {
                             <button class="learn-more-btn" data-case="2">Read Full Case Study</button>
                         </div>
                     </div>
-                    
+            
                     <!-- Comic Panel 3 -->
                     <div class="comic-panel">
                         <div class="panel-image">
@@ -1930,18 +1932,6 @@ textarea {
                             <h3>Fake Tech Support</h3>
                             <p>A pop-up warned Linda her computer was infected. The helpful "technician" who called seemed legitimate...</p>
                             <button class="learn-more-btn" data-case="3">Read Full Case Study</button>
-                        </div>
-                    </div>
-
-                    <div class="comic-panel">
-                        <div class="panel-image">
-                            <img src="assets/comic2.svg" alt="Romance scam comic">
-                            <div class="panel-tooltip" style="top: 60%; left: 70%;">This seemed too good to be true</div>
-                        </div>
-                        <div class="panel-text">
-                            <h3>The Online Romance</h3>
-                            <p>Mark thought he found love online, but after months of chatting and sending money for "emergencies"...</p>
-                            <button class="learn-more-btn" data-case="2">Read Full Case Study</button>
                         </div>
                     </div>
                 </div>
@@ -1965,12 +1955,12 @@ textarea {
             <p class="section-subtitle">Arm yourself with knowledge to prevent and combat cybercrime</p>
             <div class="res-sec">
                 <div class="resource-tabs">
-                    <button class="tab-btn" data-tab="tools">Safety Tools</button>
-                    <button class="tab-btn active" data-tab="guides">Guides</button>
+                    <button class="tab-btn active " data-tab="tools">Safety Tools</button>
+                    <button class="tab-btn " data-tab="guides">Guides</button>
                     <button class="tab-btn" data-tab="faq">FAQ</button>
                 </div>
                 
-                <div class="tab-content" data-tab="tools">
+                <div class="tab-content active" data-tab="tools">
                     <div class="resource-card hover-card">
                         <div class="card-front">
                             <h3>Phishing Scams</h3>
@@ -2032,7 +2022,7 @@ textarea {
                     </div>
                 </div>
             
-                <div class="tab-content active" data-tab="guides">
+                <div class="tab-content " data-tab="guides">
                     <div class="resource-card">
                         <div class="resource-icon">
                             <i class="fas fa-file-pdf"></i>
@@ -2332,7 +2322,7 @@ textarea {
                         <li><a href="#"><i class="fas fa-file-pdf"></i> Data Protection Bill</a></li>
                         <li><a href="#"><i class="fas fa-file-pdf"></i> Cyber Crime Reporting</a></li>
                         <li><a href="#"><i class="fas fa-book"></i> Digital Rights Handbook</a></li>
-                        <li><a href="#faq-section"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                        <li><a href="#faq-section" class="footer-faq-link">FAQ</a></li>
                     </ul>
                 </div>
                 
@@ -2363,7 +2353,60 @@ textarea {
     </button>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
+    const panels = document.querySelectorAll('.comic-panel');
+    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.prev-btn');
+    const progressBar = document.querySelector('.comic-progress');
+    let currentIndex = 0;
+    let autoplayInterval;
+
+    function updatePanels() {
+        panels.forEach((panel, i) => {
+            panel.classList.remove('active');
+        });
+
+        panels[currentIndex].classList.add('active');
+
+        const percent = ((currentIndex + 1) / panels.length) * 100;
+        progressBar.style.setProperty('--progress-width', `${percent}%`);
+    }
+
+    function goToNextPanel() {
+        currentIndex = (currentIndex + 1) % panels.length;
+        updatePanels();
+    }
+
+    function goToPrevPanel() {
+        currentIndex = (currentIndex - 1 + panels.length) % panels.length;
+        updatePanels();
+    }
+
+    function startAutoplay() {
+        autoplayInterval = setInterval(goToNextPanel, 5000); // change every 5 seconds
+    }
+
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+
+    // Button Event Listeners
+    nextBtn.addEventListener('click', () => {
+        stopAutoplay(); // optional: stop autoplay when user interacts
+        goToNextPanel();
+        startAutoplay();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        stopAutoplay();
+        goToPrevPanel();
+        startAutoplay();
+    });
+
+    updatePanels();
+    startAutoplay(); // start autoplay on load
+});
+ document.addEventListener('DOMContentLoaded', function() {
     // Preloader
     const preloader = document.querySelector('.preloader');
     window.addEventListener('load', function() {
@@ -2644,25 +2687,31 @@ textarea {
 
     // Resource tabs
     const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
+const tabContents = document.querySelectorAll('.tab-content');
 
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const tabId = this.getAttribute('data-tab');
-            
-            // Update active tab button
-            tabBtns.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Show corresponding content
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-                if (content.getAttribute('data-tab') === tabId) {
-                    content.classList.add('active');
-                }
-            });
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+        const tabId = this.getAttribute('data-tab');
+
+        // Update active tab button
+        tabBtns.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+
+        // Show corresponding content
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+            if (content.getAttribute('data-tab') === tabId) {
+                content.classList.add('active');
+            }
         });
     });
+});
+
+// Ensure Safety Tools is selected on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const defaultTabBtn = document.querySelector('.tab-btn[data-tab="tools"]');
+    if (defaultTabBtn) defaultTabBtn.click();
+});
 
     // Testimonial slider
     const testimonialSlides = document.querySelectorAll('.testimonial-slide');
@@ -2790,16 +2839,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
 });
-document.addEventListener('DOMContentLoaded', function () {
-    const faqItems = document.querySelectorAll('.faq-item');
+document.addEventListener('DOMContentLoaded', () => {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const footerFaqLink = document.querySelector('.footer-faq-link');
 
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            item.classList.toggle('active');
+    // Function to activate tab
+    function activateTab(tabId) {
+        tabBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-tab') === tabId);
         });
-    });
+
+        tabContents.forEach(content => {
+            content.classList.toggle('active', content.getAttribute('data-tab') === tabId);
+        });
+    }
+
+    // Scroll to FAQ and activate tab on footer click
+    if (footerFaqLink) {
+        footerFaqLink.addEventListener('click', function (e) {
+            e.preventDefault(); // prevent default anchor behavior
+
+            activateTab('faq'); // activate FAQ tab
+
+            const faqSection = document.getElementById('faq-section');
+            if (faqSection) {
+                faqSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 });
+
     </script>
 </body>
 </html>
