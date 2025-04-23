@@ -1693,7 +1693,7 @@ textarea {
 .submit-btn:hover {
     background-color: var(--secondary-color);
     transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var (--shadow-md);
 }
 
 .contact-info {
@@ -2290,6 +2290,54 @@ textarea {
     gap: 0.5rem;
 }
 
+/* Comic Modal Styles */
+.comic-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.comic-modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.comic-modal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.close-comic-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: black;
+    cursor: pointer;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.close-comic-modal:hover {
+    background: var(--accent-color);
+    color: white;
+}
        
     </style>
 </head>
@@ -3164,6 +3212,14 @@ textarea {
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Modal for Full Comic -->
+    <div class="comic-modal">
+        <div class="comic-modal-content">
+            <span class="close-comic-modal">&times;</span>
+            <img src="" alt="Full Comic" class="comic-modal-image">
+        </div>
+    </div>
+
     <script>
     document.addEventListener('DOMContentLoaded', function () {
     const panels = document.querySelectorAll('.comic-panel');
@@ -3684,6 +3740,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const resourceCards = document.querySelectorAll('.resource-card.hover-card');
+    const comicModal = document.querySelector('.comic-modal');
+    const comicModalImage = document.querySelector('.comic-modal-image');
+    const closeComicModal = document.querySelector('.close-comic-modal');
+
+    // Show modal on card click
+    resourceCards.forEach(card => {
+        card.addEventListener('click', function () {
+            const comicImage = this.querySelector('.card-back img').src;
+            comicModalImage.src = comicImage;
+            comicModal.style.display = 'flex';
+        });
+    });
+
+    // Close modal when clicking the close button
+    closeComicModal.addEventListener('click', function () {
+        comicModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside the content
+    comicModal.addEventListener('click', function (e) {
+        if (e.target === comicModal) {
+            comicModal.style.display = 'none';
+        }
+    });
 });
 
 
