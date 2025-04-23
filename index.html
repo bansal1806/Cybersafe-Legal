@@ -820,17 +820,29 @@ a {
     box-shadow: var(--shadow-md);
 }
 
+/* Updated Logo CSS */
 .logo {
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Adjust font size for better visibility */
     font-weight: 700;
     color: var(--primary-color);
+    gap: 10px; /* Add spacing between the logo image and text */
+    text-decoration: none;
 }
 
 .logo-img {
-    height: 40px;
-    margin-right: 10px;
+    height: 50px; /* Adjust the height of the logo image */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add spacing between the image and text */
+    object-fit: contain; /* Ensure the image fits properly */
+    transform: scale(3.5);
+}
+
+.logo span {
+    font-family: var(--font-secondary); /* Use secondary font for the text */
+    color: var(--primary-color); /* Match the text color with the theme */
+    letter-spacing: 1px; /* Add slight spacing for better readability */
 }
 
 .nav-links {
@@ -2355,8 +2367,8 @@ textarea {
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">
-                <img src="assets/logo.svg" class="logo-img">
-                <span>Cybersafe Legal</span>
+                <img src="CYBER.safe.png" class="logo-img">
+                <!-- <span>Cybersafe Legal</span> -->
             </a>
             <div class="nav-links">
                 <a href="#home" class="nav-link active">Home</a>
@@ -2995,9 +3007,9 @@ textarea {
                             <i class="fas fa-quote-left quote-icon"></i>
                             <p class="testimonial-text">After losing ₹15 lakh to an online trading scam, I thought my money was gone forever. Cybersafe Legal not only helped me file the proper complaints but guided me through the entire recovery process. Today, I've recovered 80% of my funds thanks to their expertise.</p>
                             <div class="testimonial-author">
-                                <img src="assets/client1.jpg" alt="Client 1" class="client-img">
+                                <img src="shek.jpg" alt="Client 1" class="client-img">
                                 <div class="author-info">
-                                    <h4>Rahul Sharma</h4>
+                                    <h4>Saanvik Mahajan</h4>
                                     <p>Mumbai</p>
                                 </div>
                             </div>
@@ -3009,10 +3021,10 @@ textarea {
                             <i class="fas fa-quote-left quote-icon"></i>
                             <p class="testimonial-text">As a small business owner, I didn't realize how vulnerable we were to cyber threats until we experienced a data breach. Cybersafe Legal helped us navigate the legal requirements, communicate with affected customers, and implement stronger security measures. Their preventive guidance has been invaluable.</p>
                             <div class="testimonial-author">
-                                <img src="assets/client2.jpg" alt="Client 2" class="client-img">
+                                <img src="ay.jpg" alt="Client 2" class="client-img">
                                 <div class="author-info">
-                                    <h4>Arjun Mehta</h4>
-                                    <p>Banglore</p>
+                                    <h4>Rayaan Thakur</h4>
+                                    <p>Bangalore</p>
                                 </div>
                             </div>
                         </div>
@@ -3023,11 +3035,13 @@ textarea {
                             <i class="fas fa-quote-left quote-icon"></i>
                             <p class="testimonial-text">When false allegations about my business started circulating on social media, it was affecting our reputation and sales. The team at Cybersafe Legal acted swiftly to have the content removed and pursued legal action against the perpetrators. Their knowledge of IT Act provisions was impressive.</p>
                             <div class="testimonial-author">
-                                <img src="assets/client3.jpg" alt="Client 3" class="client-img">
-                                <div class="author-info">
-                                    <h4>Priya Patel</h4>
-                                    <p>Delhi NCR</p>
-                                </div>
+                                    <img src="yu.jpg" alt="Client 2" class="client-img">
+                                    <div class="author-info">
+                                        <h4>Vivaan Rathore</h4>
+                                        <p>Bangalore</p>
+                                    </div>
+                            </div>
+                            </div>
                             </div>
                         </div>
                     </div>
