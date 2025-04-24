@@ -1541,7 +1541,7 @@ a {
     border-radius: 50%;
     object-fit: cover;
     margin-right: 15px;
-    border: 3px solid var(--primary-color);
+    border: 3px solid var (--primary-color);
 }
 
 .author-info h4 {
@@ -3780,6 +3780,92 @@ document.addEventListener('DOMContentLoaded', function () {
     comicModal.addEventListener('click', function (e) {
         if (e.target === comicModal) {
             comicModal.style.display = 'none';
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', function () {
+    // FAQ content stored in a JavaScript object
+    const faqData = {
+        1: {
+            question: "What is phishing, and how can I avoid it?",
+            answer: `
+                <p>Phishing is a type of cyberattack where attackers trick you into revealing sensitive information, such as passwords or credit card details, by pretending to be a trusted entity. To avoid phishing:</p>
+                <ul>
+                    <li>Verify sender email addresses carefully</li>
+                    <li>Never click on suspicious links</li>
+                    <li>Look for HTTPS and padlock icons</li>
+                    <li>Enable two-factor authentication</li>
+                    <li>Use a password manager</li>
+                </ul>
+            `
+        },
+        2: {
+            question: "What should I do if I fall victim to a cyber scam?",
+            answer: `
+                <p>If you've been scammed online, take these immediate steps:</p>
+                <ol>
+                    <li>Document everything (screenshots, emails, transactions)</li>
+                    <li>Contact your bank/financial institutions</li>
+                    <li>Change all compromised passwords</li>
+                    <li>File a report with local authorities</li>
+                    <li>Contact our legal team for next steps</li>
+                </ol>
+            `
+        },
+        3: {
+            question: "How can I secure my online accounts?",
+            answer: `
+                <p>Follow these best practices for account security:</p>
+                <ul>
+                    <li>Use strong, unique passwords for each account</li>
+                    <li>Enable two-factor authentication (2FA)</li>
+                    <li>Regularly update passwords (every 3-6 months)</li>
+                    <li>Avoid public Wi-Fi for sensitive transactions</li>
+                    <li>Monitor accounts for suspicious activity</li>
+                </ul>
+            `
+        }
+    };
+
+    // Dynamically render FAQ items
+    const faqContainer = document.querySelector('.faq-items-container');
+    Object.keys(faqData).forEach(key => {
+        const faqItem = document.createElement('div');
+        faqItem.classList.add('faq-item');
+        faqItem.innerHTML = `
+            <div class="faq-question" data-id="${key}">
+                <h3>${faqData[key].question}</h3>
+                <div class="toggle-indicator">
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                </div>
+            </div>
+            <div class="faq-answer" style="display: none;">
+                ${faqData[key].answer}
+            </div>
+        `;
+        faqContainer.appendChild(faqItem);
+    });
+
+    // Add click event listeners to toggle FAQ answers
+    faqContainer.addEventListener('click', function (e) {
+        const question = e.target.closest('.faq-question');
+        if (question) {
+            const faqItem = question.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-answer').style.display = 'none';
+            });
+
+            // Toggle the clicked FAQ item
+            if (!isActive) {
+                faqItem.classList.add('active');
+                answer.style.display = 'block';
+            }
         }
     });
 });
