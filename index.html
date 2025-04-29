@@ -2351,6 +2351,118 @@ textarea {
     background: var(--accent-color);
     color: white;
 }
+
+/* Case Study Modal Content */
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: var(--font-primary);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+.modal-comic img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 20px;
+}
+
+.modal-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.modal-text .case-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.timeline-marker {
+    width: 15px;
+    height: 15px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+.timeline-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.case-lessons, .case-outcome {
+    padding: 20px;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+}
+
+.case-lessons h3, .case-outcome h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.lesson-cards, .case-outcome ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.lesson-card, .case-outcome li {
+    flex: 1 1 calc(50% - 15px);
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lesson-card i, .case-outcome li i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.lesson-card p, .case-outcome li {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .lesson-card, .case-outcome li {
+        flex: 1 1 100%;
+    }
+}
        
     </style>
 </head>
@@ -2515,12 +2627,12 @@ textarea {
                     <!-- Comic Panel 1 -->
                     <div class="comic-panel">
                         <div class="panel-image">
-                            <img src="assets/comic1.svg" alt="Phishing scam comic">
+                            <img src="ps.jpg" alt="Phishing scam comic">
                             <div class="panel-tooltip" style="top: 30%; left: 25%;">Click to see what happened next</div>
                         </div>
                         <div class="panel-text">
                             <h3>The Phishing Email</h3>
-                            <p>Sarah received an email that appeared to be from her bank, asking her to verify her account details...</p>
+                            <p>A Pune-based real estate developer lost ₹4 crore in a whale phishing scam. Scammers impersonated the company's chairperson and tricked the senior accounts officer into transferring funds over a week.​</p>
                             <button class="learn-more-btn" data-case="1">Read Full Case Study</button>
                         </div>
                     </div>
@@ -2528,12 +2640,12 @@ textarea {
                     <!-- Comic Panel 2 -->
                     <div class="comic-panel">
                         <div class="panel-image">
-                            <img src="assets/comic2.svg" alt="Romance scam comic">
+                            <img src="or.jpg" alt="Romance scam comic">
                             <div class="panel-tooltip" style="top: 60%; left: 70%;">This seemed too good to be true</div>
                         </div>
                         <div class="panel-text">
                             <h3>The Online Romance</h3>
-                            <p>Mark thought he found love online, but after months of chatting and sending money for "emergencies"...</p>
+                            <p>Engineer from Vizag loses Rs 28 lakh after falling for a new romance scam​</p>
                             <button class="learn-more-btn" data-case="2">Read Full Case Study</button>
                         </div>
                     </div>
@@ -2541,12 +2653,12 @@ textarea {
                     <!-- Comic Panel 3 -->
                     <div class="comic-panel">
                         <div class="panel-image">
-                            <img src="assets/comic3.svg" alt="Tech support scam comic">
+                            <img src="fts.jpg" alt="Tech support scam comic">
                             <div class="panel-tooltip" style="top: 40%; left: 50%;">The pop-up looked official</div>
                         </div>
                         <div class="panel-text">
-                            <h3>Fake Tech Support</h3>
-                            <p>A pop-up warned Linda her computer was infected. The helpful "technician" who called seemed legitimate...</p>
+                            <h3>Investment</h3>
+                            <p>Pretending to be bank representatives​</p>
                             <button class="learn-more-btn" data-case="3">Read Full Case Study</button>
                         </div>
                     </div>
@@ -2554,13 +2666,13 @@ textarea {
                     <!-- Comic Panel 4 -->
                     <div class="comic-panel">
                         <div class="panel-image">
-                            <img src="assets/comic3.svg" alt="Tech support scam comic">
+                            <img src="oit.jpg" alt="Tech support scam comic">
                             <div class="panel-tooltip" style="top: 40%; left: 50%;">The pop-up looked official</div>
                         </div>
                         <div class="panel-text">
-                            <h3>Fake Tech Support</h3>
-                            <p>A pop-up warned Linda her computer was infected. The helpful "technician" who called seemed legitimate...</p>
-                            <button class="learn-more-btn" data-case="3">Read Full Case Study</button>
+                            <h3>Online Identity Theft</h3>
+                            <p>Woman loses Rs 20 crore in Aadhaar digital arrest scam: Why do people keep falling in traps?​</p>
+                            <button class="learn-more-btn" data-case="4">Read Full Case Study</button>
                         </div>
                     </div>
                 </div>
@@ -2584,7 +2696,7 @@ textarea {
             <p class="section-subtitle">Arm yourself with knowledge to prevent and combat cybercrime</p>
             <div class="res-sec">
                 <div class="resource-tabs">
-                    <button class="tab-btn active " data-tab="tools">Safety Tools</button>
+                    <button class="tab-btn active " data-tab="tools">Cyber Tales</button>
                     <button class="tab-btn " data-tab="guides">Guides</button>
                     <button class="tab-btn" data-tab="faq">FAQ</button>
                 </div>
@@ -2592,8 +2704,8 @@ textarea {
                 <div class="tab-content active" data-tab="tools">
                     <div class="resource-card hover-card">
                         <div class="card-front">
-                            <h3>Phishing Scams</h3>
-                            <p>Learn how to identify and avoid phishing scams that trick you into revealing sensitive information.</p>
+                            <h3>Never Share OTPs</h3>
+                            <p>Users share OTPs without understanding the risk of unauthorized transactions</p>
                         </div>
                         <div class="card-back">
                             <img src="assets/comic1.svg" alt="Phishing Comic">
@@ -2602,8 +2714,8 @@ textarea {
                     
                     <div class="resource-card hover-card">
                         <div class="card-front">
-                            <h3>Password Security</h3>
-                            <p>Understand the importance of strong passwords and how to create ones that are hard to crack.</p>
+                            <h3>Avoid Fake Links</h3>
+                            <p>People click on fake reward links, leading to phishing and financial loss</p>
                         </div>
                         <div class="card-back">
                             <img src="assets/comic2.svg" alt="Password Security Comic">
@@ -2612,8 +2724,8 @@ textarea {
                     
                     <div class="resource-card hover-card">
                         <div class="card-front">
-                            <h3>Safe Online Transactions</h3>
-                            <p>Discover best practices for secure online shopping and protecting your financial data.</p>
+                            <h3>Don’t Fall for Impersonators</h3>
+                            <p>Scammers impersonate law enforcement to extort money through fear</p>
                         </div>
                         <div class="card-back">
                             <img src="assets/comic3.svg" alt="Online Transactions Comic">
@@ -2622,8 +2734,8 @@ textarea {
 
                     <div class="resource-card hover-card">
                         <div class="card-front">
-                            <h3>Phishing Scams</h3>
-                            <p>Learn how to identify and avoid phishing scams that trick you into revealing sensitive information.</p>
+                            <h3>Secure Your Home</h3>
+                            <p>Lack of cyber awareness at home makes families easy scam targets</p>
                         </div>
                         <div class="card-back">
                             <img src="assets/comic1.svg" alt="Phishing Comic">
@@ -2632,8 +2744,8 @@ textarea {
                     
                     <div class="resource-card hover-card">
                         <div class="card-front">
-                            <h3>Password Security</h3>
-                            <p>Understand the importance of strong passwords and how to create ones that are hard to crack.</p>
+                            <h3>Know Your Rights</h3>
+                            <p>Victims don’t know how to file cybercrime complaints effectively</p>
                         </div>
                         <div class="card-back">
                             <img src="assets/comic2.svg" alt="Password Security Comic">
@@ -2642,8 +2754,8 @@ textarea {
                     
                     <div class="resource-card hover-card">
                         <div class="card-front">
-                            <h3>Safe Online Transactions</h3>
-                            <p>Discover best practices for secure online shopping and protecting your financial data.</p>
+                            <h3>Invest Smart</h3>
+                            <p>People fall for investment scams due to fake profiles and unverified sources</p>
                         </div>
                         <div class="card-back">
                             <img src="assets/comic3.svg" alt="Online Transactions Comic">
@@ -2658,16 +2770,16 @@ textarea {
                         </div>
                         <h3>Scam Identification Handbook</h3>
                         <p>Learn to recognize the most common online scams before they trap you.</p>
-                        <a href="#" class="download-btn">Download <i class="fas fa-download"></i></a>
+                        <a href="TSWSW-HandbookforTacklingCyberCrimes (3).pdf" class="download-btn">Download <i class="fas fa-download"></i></a>
                     </div>
                     
                     <div class="resource-card">
                         <div class="resource-icon">
                             <i class="fas fa-list-check"></i>
                         </div>
-                        <h3>Post-Scam Action Plan</h3>
+                        <h3>Cyber Crime Reporting Handbook</h3>
                         <p>Step-by-step guide on what to do immediately after falling victim.</p>
-                        <a href="#" class="download-btn">Download <i class="fas fa-download"></i></a>
+                        <a href="Digital-Rights-and-Safety-Handbook.pdf" class="download-btn">Download <i class="fas fa-download"></i></a>
                     </div>
                     
                     <div class="resource-card">
@@ -3193,10 +3305,10 @@ textarea {
                 <div class="footer-col">
                     <h3>Legal Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> IT Act 2000</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> Data Protection Bill</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> Cyber Crime Reporting</a></li>
-                        <li><a href="#"><i class="fas fa-book"></i> Digital Rights Handbook</a></li>
+                        <li><a href="it_act_2000_updated.pdf"><i class="fas fa-file-pdf"></i> IT Act 2000</a></li>
+                        <li><a href="Digital Personal Data Protection Bill, 2023.pdf"><i class="fas fa-file-pdf"></i> Data Protection Bill</a></li>
+                        <li><a href="mha-citizenmanualreportothercybercrime-v10.pdf"><i class="fas fa-file-pdf"></i> Cyber Crime Reporting</a></li>
+                        <li><a href="Digital-Rights-and-Safety-Handbook.pdf"><i class="fas fa-book"></i> Digital Rights Handbook</a></li>
                         <li><a href="#faq-section" class="footer-faq-link">FAQ</a></li>
                     </ul>
                 </div>
@@ -3214,10 +3326,10 @@ textarea {
             
             <div class="footer-bottom">
                 <p>&copy; 2023 Cybersafe Legal. All rights reserved.</p>
-                <div class="security-badges">
+                <!-- <div class="security-badges">
                     <img src="assets/ssl-badge.svg" alt="SSL Secure">
                     <img src="assets/trust-badge.svg" alt="Trusted Site">
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>
@@ -3458,60 +3570,51 @@ textarea {
         1: {
             title: "The Phishing Email Scam",
             content: `
-                <h2>The Phishing Email Scam</h2>
-                <div class="case-timeline">
+                <h2>The Phishing Scam</h2>
+                <div class="case-timeline" style="margin: 32px 0px;">
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <h4>Initial Contact</h4>
-                            <p>Sarah received an email that appeared to be from her bank, asking her to verify her account details due to "suspicious activity." The email looked legitimate, complete with the bank's logo and branding.</p>
+                            <p>Anjali, a 30-year-old Hyderabad teacher, received an email appearing from her bank, citing “suspicious activity” and urging her to verify account details.</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" >
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <h4>Fake Website</h4>
-                            <p>She clicked the link which took her to a website that looked identical to her bank's login page. Without thinking, she entered her username and password.</p>
+                            <p>The email linked to a website mimicking her bank’s login page, with logos and branding, where Anjali entered her username and password.
+</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <h4>The Aftermath</h4>
-                            <p>Within hours, the scammers had emptied her savings account and opened several credit cards in her name. Sarah felt violated and didn't know where to turn.</p>
+                            <p>Scammers drained ₹3,00,000 from Anjali’s savings, leaving her financially stressed and fearing identity theft.
+</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <h4>Our Intervention</h4>
-                            <p>Cybersafe Legal helped Sarah freeze her accounts, file police reports, and work with the bank to recover a portion of her funds. We also helped her implement stronger security measures.</p>
+                            <p>Cybersafe Legal helped Anjali freeze her accounts, report to I4C, and trace transactions with her bank, while enabling credit monitoring.
+</p>
                         </div>
                     </div>
-                </div>
-                <div class="case-outcome">
-                    <h3>Case Outcome</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> 65% of stolen funds recovered</li>
-                        <li><i class="fas fa-check-circle"></i> Fraudulent credit cards closed</li>
-                        <li><i class="fas fa-check-circle"></i> Credit monitoring established</li>
-                        <li><i class="fas fa-check-circle"></i> Scammer's operation identified and reported</li>
-                    </ul>
                 </div>
                 <div class="case-lessons">
                     <h3>Key Lessons</h3>
                     <div class="lesson-cards">
                         <div class="lesson-card">
                             <i class="fas fa-link"></i>
-                            <p>Always check the URL before entering login credentials</p>
+                            <p>Always verify URLs before entering login credentials.
+</p>
                         </div>
                         <div class="lesson-card">
                             <i class="fas fa-envelope"></i>
-                            <p>Banks will never ask for sensitive information via email</p>
-                        </div>
-                        <div class="lesson-card">
-                            <i class="fas fa-lock"></i>
-                            <p>Use two-factor authentication for all financial accounts</p>
+                            <p>Banks never request sensitive details via email.</p>
                         </div>
                     </div>
                 </div>
@@ -3522,18 +3625,161 @@ textarea {
             title: "The Online Romance Scam",
             content: `
                 <h2>The Online Romance Scam</h2>
-                <div class="case-timeline">
-                    <!-- Timeline content would go here -->
+                <div class="case-timeline" style="margin: 32px 0px;">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Initial Contact</h4>
+                            <p>The victim received a fake email mimicking a bank alerting about suspicious activity.
+</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Fake Website</h4>
+                            <p>A link in the email led to a cloned bank login page that harvested her login details.
+</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>The Aftermath</h4>
+                            <p>The victim faced major financial loss, identity theft, and emotional distress.
+</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Our Intervention</h4>
+                            <p>Helped freeze accounts, file complaints, recover funds, and secure her identity.
+</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-lessons">
+                    <h3>Key Lessons</h3>
+                    <div class="lesson-cards">
+                        <div class="lesson-card">
+                            <i class="fas fa-link"></i>
+                            <p>Check URLs</p>
+                        </div>
+                        <div class="lesson-card">
+                            <i class="fas fa-envelope"></i>
+                            <p>Never share bank details via email</p>
+                        </div>
+                    </div>
                 </div>
             `,
             image: "assets/comic2-full.svg"
         },
         3: {
-            title: "The Fake Tech Support Scam",
+            title: "Investment Scam",
             content: `
-                <h2>The Fake Tech Support Scam</h2>
-                <div class="case-timeline">
-                    <!-- Timeline content would go here -->
+                <h2>Investment Scam</h2>
+                <div class="case-timeline" style="margin: 32px 0px;">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Initial Contact</h4>
+                            <p>Rohan, a 50-year-old Delhi businessman, received a WhatsApp message promising high stock market returns, linking to a “SEBI-registered” investment club.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Fake Website</h4>
+                            <p>The link led to a trading platform with SEBI logos and live charts, where Rohan invested ₹5,00,000.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>The Aftermath</h4>
+                            <p>Scammers locked Rohan out, stealing ₹5,00,000, leaving him financially strained and fearing data misuse.
+</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Our Intervention</h4>
+                            <p>Cybersafe Legal reported the fraud to I4C and SEBI, traced transactions with Rohan’s bank, and enrolled him in credit monitoring.
+
+</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-lessons">
+                    <h3>Key Lessons</h3>
+                    <div class="lesson-cards">
+                        <div class="lesson-card">
+                            <i class="fas fa-link"></i>
+                            <p>Verify investment platforms via SEBI’s official website before transferring funds.
+</p>
+                        </div>
+                        <div class="lesson-card">
+                            <i class="fas fa-envelope"></i>
+                            <p>Avoid unsolicited investment offers promising quick profits on social media.</p>
+                        </div>
+                    </div>
+                </div>
+            `,
+            image: "assets/comic3-full.svg"
+        },
+        4: {
+            title: "Identity Theft Scam",
+            content: `
+                <h2>Identity Theft Scam</h2>
+                <div class="case-timeline" style="margin: 32px 0px;">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Initial Contact</h4>
+                            <p>Arjun, a 35-year-old Bengaluru engineer, got a call from a supposed Income Tax official demanding his Aadhaar and PAN to fix a tax issue.
+</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Fake Website</h4>
+                            <p>The caller directed Arjun to a website resembling the Income Tax e-Filing portal, where he entered his Aadhaar, PAN, and bank details.
+</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>The Aftermath</h4>
+                            <p>Scammers opened a ₹10 lakh loan in Arjun’s name, stealing ₹3 lakh, damaging his credit and causing distress.
+</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Our Intervention</h4>
+                            <p>Cybersafe Legal reported the fraud to I4C, froze Arjun’s accounts, disputed the loan, and enrolled him in credit monitoring.
+</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-lessons">
+                    <h3>Key Lessons</h3>
+                    <div class="lesson-cards">
+                        <div class="lesson-card">
+                            <i class="fas fa-link"></i>
+                            <p>Never share Aadhaar or PAN on unsolicited calls or websites.
+</p>
+                        </div>
+                        <div class="lesson-card">
+                            <i class="fas fa-envelope"></i>
+                            <p>Verify tax communications via www.incometax.gov.in.</p>
+                        </div>
+                    </div>
                 </div>
             `,
             image: "assets/comic3-full.svg"
@@ -3786,45 +4032,8 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     // FAQ content stored in a JavaScript object
     const faqData = {
-        1: {
-            question: "What is phishing, and how can I avoid it?",
-            answer: `
-                <p>Phishing is a type of cyberattack where attackers trick you into revealing sensitive information, such as passwords or credit card details, by pretending to be a trusted entity. To avoid phishing:</p>
-                <ul>
-                    <li>Verify sender email addresses carefully</li>
-                    <li>Never click on suspicious links</li>
-                    <li>Look for HTTPS and padlock icons</li>
-                    <li>Enable two-factor authentication</li>
-                    <li>Use a password manager</li>
-                </ul>
-            `
-        },
-        2: {
-            question: "What should I do if I fall victim to a cyber scam?",
-            answer: `
-                <p>If you've been scammed online, take these immediate steps:</p>
-                <ol>
-                    <li>Document everything (screenshots, emails, transactions)</li>
-                    <li>Contact your bank/financial institutions</li>
-                    <li>Change all compromised passwords</li>
-                    <li>File a report with local authorities</li>
-                    <li>Contact our legal team for next steps</li>
-                </ol>
-            `
-        },
-        3: {
-            question: "How can I secure my online accounts?",
-            answer: `
-                <p>Follow these best practices for account security:</p>
-                <ul>
-                    <li>Use strong, unique passwords for each account</li>
-                    <li>Enable two-factor authentication (2FA)</li>
-                    <li>Regularly update passwords (every 3-6 months)</li>
-                    <li>Avoid public Wi-Fi for sensitive transactions</li>
-                    <li>Monitor accounts for suspicious activity</li>
-                </ul>
-            `
-        }
+        
+        
     };
 
     // Dynamically render FAQ items
