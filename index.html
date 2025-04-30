@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="index.css">
     <style>
         :root {
-    --primary-color: #161E2F; /* Dark Blue */
-    --secondary-color: #242F49; /* Deep Blue */
-    --accent-color: #B51A2B; /* Bright Red */
-    --light-color: #384358; /* Muted Blue */
-    --dark-color: #541A2E; /* Dark Red */
-    --text-color: #FFA586; /* Light Peach */
-    --light-text: #FFA586; /* Light Peach */
-    --gray-light: #384358; /* Muted Blue */
-    --gray-medium: #242F49; /* Deep Blue */
-    --success-color: #B51A2B; /* Bright Red */
-    --warning-color: #541A2E; /* Dark Red */
+    --primary-color: #0d0729; /* Dark Purple */
+    --secondary-color: #091358; /* Deep Blue */
+    --accent-color: #bc0008; /* Bright Red */
+    --light-color: #6883a1; /* Muted Blue */
+    --dark-color: #6a0307; /* Dark Red */
+    --text-color: #6883a1; /* Muted Blue */
+    --light-text: #6883a1; /* Muted Blue */
+    --gray-light: #6883a1; /* Muted Blue */
+    --gray-medium: #091358; /* Deep Blue */
+    --success-color: #bc0008; /* Bright Red */
+    --warning-color: #6a0307; /* Dark Red */
     --font-primary: 'Poppins', sans-serif;
     --font-secondary: 'Montserrat', sans-serif;
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -833,7 +833,7 @@ a {
 }
 
 .logo-img {
-    height: 50px; /* Adjust the height of the logo image */
+    height: 14px; /* Adjust the height of the logo image */
     width: auto; /* Maintain aspect ratio */
     margin-right: 10px; /* Add spacing between the image and text */
     object-fit: contain; /* Ensure the image fits properly */
@@ -1474,65 +1474,65 @@ a {
 
 /* Testimonials Section */
 .testimonials-section {
-    background-color: white;
+    
+    padding: 80px 0;
+    text-align: center;
 }
 
 .testimonial-slider {
+    position: relative;
     max-width: 800px;
     margin: 0 auto;
-    position: relative;
 }
 
 .testimonial-slides {
     position: relative;
-    height: 400px;
     overflow: hidden;
+    height: 370px;
+    width: 50rem;
 }
 
 .testimonial-slide {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 100%;
     width: 100%;
-    height: 100%;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .testimonial-slide.active {
+    left: 0;
     opacity: 1;
 }
 
 .testimonial-content {
-    background-color: var(--light-color);
+    background-color: white;
     border-radius: 10px;
     padding: 40px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    box-shadow: var(--shadow-md);
     position: relative;
 }
 
 .quote-icon {
     position: absolute;
-    top: 30px;
-    left: 30px;
+    top: -20px;
+    left: 20px;
     font-size: 3rem;
-    color: rgba(0,0,0,0.1);
+    color: rgba(0, 0, 0, 0.1);
 }
 
 .testimonial-text {
     font-size: 1.2rem;
     font-style: italic;
     margin-bottom: 30px;
-    position: relative;
-    z-index: 1;
 }
 
 .testimonial-author {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
 .client-img {
@@ -1540,8 +1540,7 @@ a {
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 15px;
-    border: 3px solid var (--primary-color);
+    border: 3px solid var(--primary-color);
 }
 
 .author-info h4 {
@@ -1553,13 +1552,26 @@ a {
 .author-info p {
     font-size: 0.9rem;
     color: #718096;
-    margin: 0;
 }
 
 .testimonial-dots {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--gray-medium);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--primary-color);
 }
 
 /* Emergency Section */
@@ -1755,7 +1767,7 @@ textarea {
 }
 
 .info-card p {
-    color: #4a5568;
+    color: #cfd6df;
     margin: 0;
 }
 
@@ -2007,7 +2019,92 @@ textarea {
     }
 }
 
+/* About Section */
+.about-section {
+    background-color: #f8fafc;
+    padding: 80px 20px;
+    text-align: center;
+}
 
+.about-section .section-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.about-section .section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 50px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    animation: fadeInUp 0.5s ease forwards;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.team-photo {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-photo img {
+    transform: scale(1.1);
+}
+
+.team-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.team-info h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.team-info p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* Testimonial Section */
 .testimonials-section {
     
@@ -2413,7 +2510,7 @@ textarea {
 
 .timeline-content p {
     font-size: 1rem;
-    color: var(--text-color);
+    color: white;
 }
 
 .case-lessons, .case-outcome {
@@ -2463,7 +2560,205 @@ textarea {
         flex: 1 1 100%;
     }
 }
-       
+ /* Chatbot Styles */
+ .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            font-family: var(--font-primary);
+        }
+        
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1.5rem;
+        }
+        
+        .chatbot-button:hover {
+            transform: scale(1.1);
+            background-color: var(--dark-color);
+        }
+        
+        .chatbot-window {
+            width: 350px;
+            height: 500px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .chatbot-window.active {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .chatbot-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chatbot-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f8fafc;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            position: relative;
+        }
+        
+        .bot-message {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid #e2e8f0;
+            border-bottom-left-radius: 5px;
+            align-self: flex-start;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .user-message {
+            background-color: var(--accent-color);
+            color: white;
+            border-bottom-right-radius: 5px;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #e2e8f0;
+            background-color: white;
+        }
+        
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 50px;
+            outline: none;
+            font-family: var(--font-primary);
+        }
+        
+        .chatbot-input button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .chatbot-input button:hover {
+            background-color: var(--dark-color);
+        }
+        
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .quick-reply {
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .quick-reply:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #cbd5e0;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typingAnimation 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typingAnimation {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+        
+        /* Add this to your existing keyframes section */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }      
     </style>
 </head>
 <body>
@@ -2480,8 +2775,8 @@ textarea {
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">
-                <img src="CYBER.safe.png" class="logo-img">
-                <!-- <span>Cybersafe Legal</span> -->
+                <img src="images/Cybersafe_Legal-removebg-preview.png" class="logo-img">
+                <span style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Cybersafe Legal</span>
             </a>
             <div class="nav-links">
                 <a href="#home" class="nav-link active">Home</a>
@@ -2548,8 +2843,8 @@ textarea {
     <!-- Services Section -->
     <section id="services" class="services-section">
         <div class="container">
-            <h2 class="section-title">How We Protect You</h2>
-            <p class="section-subtitle">Comprehensive services tailored to cybercrime victims</p>
+            <h2 class="section-title" style="color: white;">How We Protect You</h2>
+            <p class="section-subtitle" style="color: rgb(232, 226, 226);">Comprehensive services tailored to cybercrime victims</p>
             
             <div class="services-grid">
                 <div class="service-card">
@@ -2627,7 +2922,7 @@ textarea {
                     <!-- Comic Panel 1 -->
                     <div class="comic-panel">
                         <div class="panel-image">
-                            <img src="ps.jpg" alt="Phishing scam comic">
+                            <img src="images/ps.jpg" alt="Phishing scam comic">
                             <div class="panel-tooltip" style="top: 30%; left: 25%;">Click to see what happened next</div>
                         </div>
                         <div class="panel-text">
@@ -2640,11 +2935,11 @@ textarea {
                     <!-- Comic Panel 2 -->
                     <div class="comic-panel">
                         <div class="panel-image">
-                            <img src="or.jpg" alt="Romance scam comic">
+                            <img src="images/or.jpg" alt="Romance scam comic">
                             <div class="panel-tooltip" style="top: 60%; left: 70%;">This seemed too good to be true</div>
                         </div>
                         <div class="panel-text">
-                            <h3>The Online Romance</h3>
+                            <h3>TheOnline Romance</h3>
                             <p>Engineer from Vizag loses Rs 28 lakh after falling for a new romance scam​</p>
                             <button class="learn-more-btn" data-case="2">Read Full Case Study</button>
                         </div>
@@ -2653,7 +2948,7 @@ textarea {
                     <!-- Comic Panel 3 -->
                     <div class="comic-panel">
                         <div class="panel-image">
-                            <img src="fts.jpg" alt="Tech support scam comic">
+                            <img src="images/fts.jpg" alt="Tech support scam comic">
                             <div class="panel-tooltip" style="top: 40%; left: 50%;">The pop-up looked official</div>
                         </div>
                         <div class="panel-text">
@@ -2666,7 +2961,7 @@ textarea {
                     <!-- Comic Panel 4 -->
                     <div class="comic-panel">
                         <div class="panel-image">
-                            <img src="oit.jpg" alt="Tech support scam comic">
+                            <img src="images/oit.jpg" alt="Tech support scam comic">
                             <div class="panel-tooltip" style="top: 40%; left: 50%;">The pop-up looked official</div>
                         </div>
                         <div class="panel-text">
@@ -2692,8 +2987,8 @@ textarea {
     <!-- Resources Section -->
     <section id="resources" class="resources-section">
         <div class="container">
-            <h2 class="section-title">Educational Resources</h2>
-            <p class="section-subtitle">Arm yourself with knowledge to prevent and combat cybercrime</p>
+            <h2 class="section-title" style="color: white;">Educational Resources</h2>
+            <p class="section-subtitle" style="color: rgb(232, 226, 226);">Arm yourself with knowledge to prevent and combat cybercrime</p>
             <div class="res-sec">
                 <div class="resource-tabs">
                     <button class="tab-btn active " data-tab="tools">Cyber Tales</button>
@@ -2708,7 +3003,7 @@ textarea {
                             <p>Users share OTPs without understanding the risk of unauthorized transactions</p>
                         </div>
                         <div class="card-back">
-                            <img src="com1.png" alt="Phishing Comic">
+                            <img src="images/_com1.png" alt="Phishing Comic">
                         </div>
                     </div>
                     
@@ -2718,7 +3013,7 @@ textarea {
                             <p>People click on fake reward links, leading to phishing and financial loss</p>
                         </div>
                         <div class="card-back">
-                            <img src="com2.png" alt="Password Security Comic">
+                            <img src="images/_com2.png" alt="Password Security Comic">
                         </div>
                     </div>
                     
@@ -2728,7 +3023,7 @@ textarea {
                             <p>Scammers impersonate law enforcement to extort money through fear</p>
                         </div>
                         <div class="card-back">
-                            <img src="com3.png" alt="Online Transactions Comic">
+                            <img src="images/_com3.png" alt="Online Transactions Comic">
                         </div>
                     </div>
 
@@ -2738,7 +3033,7 @@ textarea {
                             <p>Lack of cyber awareness at home makes families easy scam targets</p>
                         </div>
                         <div class="card-back">
-                            <img src="com4.png" alt="Phishing Comic">
+                            <img src="images/_com4.png" alt="Phishing Comic">
                         </div>
                     </div>
                     
@@ -2748,7 +3043,7 @@ textarea {
                             <p>Victims don’t know how to file cybercrime complaints effectively</p>
                         </div>
                         <div class="card-back">
-                            <img src="assets/comic2.svg" alt="Password Security Comic">
+                            <img src="images/_com5.png" alt="Password Security Comic">
                         </div>
                     </div>
                     
@@ -2758,7 +3053,7 @@ textarea {
                             <p>People fall for investment scams due to fake profiles and unverified sources</p>
                         </div>
                         <div class="card-back">
-                            <img src="com6.png" alt="Online Transactions Comic">
+                            <img src="images/_com6.png" alt="Online Transactions Comic">
                         </div>
                     </div>
                 </div>
@@ -2770,7 +3065,7 @@ textarea {
                         </div>
                         <h3>Scam Identification Handbook</h3>
                         <p>Learn to recognize the most common online scams before they trap you.</p>
-                        <a href="TSWSW-HandbookforTacklingCyberCrimes (3).pdf" class="download-btn">Download <i class="fas fa-download"></i></a>
+                        <a href="pdf/TSWSW-HandbookforTacklingCyberCrimes (3).pdf" class="download-btn">Download <i class="fas fa-download"></i></a>
                     </div>
                     
                     <div class="resource-card">
@@ -2779,7 +3074,7 @@ textarea {
                         </div>
                         <h3>Cyber Crime Reporting Handbook</h3>
                         <p>Step-by-step guide on what to do immediately after falling victim.</p>
-                        <a href="Digital-Rights-and-Safety-Handbook.pdf" class="download-btn">Download <i class="fas fa-download"></i></a>
+                        <a href="pdf/mha-citizenmanualreportothercybercrime-v10.pdf" class="download-btn">Download <i class="fas fa-download"></i></a>
                     </div>
                     
                     <div class="resource-card">
@@ -2788,7 +3083,7 @@ textarea {
                         </div>
                         <h3>Legal Rights Handbook</h3>
                         <p>Understand your legal rights as a cybercrime victim.</p>
-                        <a href="#" class="download-btn">Download <i class="fas fa-download"></i></a>
+                        <a href="pdf/Digital-Rights-and-Safety-Handbook.pdf" class="download-btn">Download <i class="fas fa-download"></i></a>
                     </div>
                 </div>
                 
@@ -2853,6 +3148,7 @@ textarea {
                                 </div>
                             </div>
                             
+
                             <!-- FAQ 2 -->
                             <div class="faq-item" data-category="legal">
                                 <div class="faq-question">
@@ -2898,6 +3194,7 @@ textarea {
                                 </div>
                             </div>
                             
+
                             <!-- FAQ 3 -->
                             <div class="faq-item" data-category="technical">
                                 <div class="faq-question">
@@ -2946,6 +3243,7 @@ textarea {
                                 </div>
                             </div>
                             
+
                             <!-- FAQ 4 -->
                             <div class="faq-item" data-category="legal">
                                 <div class="faq-question">
@@ -2990,6 +3288,7 @@ textarea {
                                 </div>
                             </div>
                             
+
                             <!-- FAQ 5 -->
                             <div class="faq-item" data-category="general">
                                 <div class="faq-question">
@@ -3033,6 +3332,7 @@ textarea {
                                 </div>
                             </div>
                             
+
                             <!-- FAQ 6 -->
                             <div class="faq-item" data-category="prevention">
                                 <div class="faq-question">
@@ -3120,7 +3420,7 @@ textarea {
                             <i class="fas fa-quote-left quote-icon"></i>
                             <p class="testimonial-text">After losing ₹15 lakh to an online trading scam, I thought my money was gone forever. Cybersafe Legal not only helped me file the proper complaints but guided me through the entire recovery process. Today, I've recovered 80% of my funds thanks to their expertise.</p>
                             <div class="testimonial-author">
-                                <img src="shek.jpg" alt="Client 1" class="client-img">
+                                <img src="images/shek.jpg" alt="Client 1" class="client-img">
                                 <div class="author-info">
                                     <h4>Saanvik Mahajan </h4>
                                     <p>Mumbai</p>
@@ -3134,7 +3434,7 @@ textarea {
                             <i class="fas fa-quote-left quote-icon"></i>
                             <p class="testimonial-text">As a small business owner, I didn't realize how vulnerable we were to cyber threats until we experienced a data breach. Cybersafe Legal helped us navigate the legal requirements, communicate with affected customers, and implement stronger security measures. Their preventive guidance has been invaluable.</p>
                             <div class="testimonial-author">
-                                <img src="ay.jpg" alt="Client 2" class="client-img">
+                                <img src="images/ay.jpg" alt="Client 2" class="client-img">
                                 <div class="author-info">
                                     <h4>Rayaan Thakur</h4>
                                     <p>Bangalore</p>
@@ -3148,7 +3448,7 @@ textarea {
                             <i class="fas fa-quote-left quote-icon"></i>
                             <p class="testimonial-text">When false allegations about my business started circulating on social media, it was affecting our reputation and sales. The team at Cybersafe Legal acted swiftly to have the content removed and pursued legal action against the perpetrators. Their knowledge of IT Act provisions was impressive.</p>
                             <div class="testimonial-author">
-                                    <img src="yu.jpg" alt="Client 2" class="client-img">
+                                    <img src="images/yu.jpg" alt="Client 2" class="client-img">
                                     <div class="author-info">
                                         <h4>Vivaan Rathore</h4>
                                         <p>Bangalore</p>
@@ -3158,6 +3458,7 @@ textarea {
                             </div>
                         </div>
                     </div>
+                    
                 </div>
                 <div class="testimonial-dots">
                     <span class="dot active" data-slide="0"></span>
@@ -3190,8 +3491,7 @@ textarea {
                         </div>
                         <h3>Live Chat</h3>
                         <p>Connect instantly with a support specialist</p>
-                        <button class="chat-btn">Start Chat Now</button>
-                    </div>
+                        <a href="#chatbotWindow"><button id="startChatBtn" class="chat-btn">Start Chat Now</button></a>                    </div>
                     
                     <div class="emergency-card form">
                         <div class="emergency-icon">
@@ -3267,12 +3567,103 @@ textarea {
         </div>
     </section>
 
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="section-subtitle">The dedicated professionals behind Cybersafe Legal</p>
+            
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="images/shour.jpg" alt="Shourya Bansal">
+                    </div>
+                    <div class="team-info">
+                        <h3>Shourya Bansal</h3>
+                        <p>Founder & CEO</p>
+                    </div>
+                </div>
+    
+                <!-- Team Member 2 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="images/adi.jpg" alt="Aditya Modani">
+                    </div>
+                    <div class="team-info">
+                        <h3>Aditya Modani</h3>
+                        <p>Website Developer</p>
+                    </div>
+                </div>
+    
+                <!-- Team Member 3 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="images/lvan.jpg" alt="Lavanya Aggarwal">
+                    </div>
+                    <div class="team-info">
+                        <h3>Lavanya Aggarwal</h3>
+                        <p>Legal Advisor</p>
+                    </div>
+                </div>
+    
+                <!-- Team Member 4 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="images/yu.jpg" alt="Ayush Sharma">
+                    </div>
+                    <div class="team-info">
+                        <h3>Ayush Sharma</h3>
+                        <p>Designer</p>
+                    </div>
+                </div>
+    
+                <!-- Team Member 5 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="images/ay.jpg" alt="Yuvraj Singh Shekhawat">
+                    </div>
+                    <div class="team-info">
+                        <h3>Yuvraj Singh Shekhawat</h3>
+                        <p>News Editor</p>
+                    </div>
+                </div>
+    
+                <!-- Team Member 6 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="images/priy.jpg" alt="Priyank Sharma">
+                    </div>
+                    <div class="team-info">
+                        <h3>Priyank Sharma</h3>
+                        <p>Marketing Expert</p>
+                    </div>
+                </div>
+    
+                <!-- Team Member 7 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="images/bhy.jpg" alt="Bhavya Pareek">
+                    </div>
+                    <div class="team-info">
+                        <h3>Bhavya Pareek</h3>
+                        <p>Digital Forensics Specialist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col about">
-                    <img src="assets/logo-white.svg" alt="Cybersafe Legal" class="footer-logo">
+                    <b style="font-size: x-large; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Cybersafe Legal</b>
+                    <br>
+                    <br>
+                    <br>
                     <p>Cybersafe Legal is dedicated to supporting victims of online scams through legal expertise, resources, and compassionate advocacy.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -3305,10 +3696,10 @@ textarea {
                 <div class="footer-col">
                     <h3>Legal Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="it_act_2000_updated.pdf"><i class="fas fa-file-pdf"></i> IT Act 2000</a></li>
-                        <li><a href="Digital Personal Data Protection Bill, 2023.pdf"><i class="fas fa-file-pdf"></i> Data Protection Bill</a></li>
-                        <li><a href="mha-citizenmanualreportothercybercrime-v10.pdf"><i class="fas fa-file-pdf"></i> Cyber Crime Reporting</a></li>
-                        <li><a href="Digital-Rights-and-Safety-Handbook.pdf"><i class="fas fa-book"></i> Digital Rights Handbook</a></li>
+                        <li><a href="pdf/it_act_2000_updated.pdf"><i class="fas fa-file-pdf"></i> IT Act 2000</a></li>
+                        <li><a href="pdf/Digital Personal Data Protection Bill, 2023.pdf"><i class="fas fa-file-pdf"></i> Data Protection Bill</a></li>
+                        <li><a href="pdf/mha-citizenmanualreportothercybercrime-v10.pdf"><i class="fas fa-file-pdf"></i> Cyber Crime Reporting</a></li>
+                        <li><a href="pdf/Digital-Rights-and-Safety-Handbook.pdf"><i class="fas fa-book"></i> Digital Rights Handbook</a></li>
                         <li><a href="#faq-section" class="footer-faq-link">FAQ</a></li>
                     </ul>
                 </div>
@@ -3346,7 +3737,29 @@ textarea {
             <img src="" alt="Full Comic" class="comic-modal-image">
         </div>
     </div>
-
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <button class="chatbot-button" id="chatbotToggle">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3>Cybersafe Legal Assistant</h3>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <!-- Messages will be added here dynamically -->
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your question...">
+                <button id="chatbotSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
     const panels = document.querySelectorAll('.comic-panel');
@@ -3707,7 +4120,6 @@ textarea {
                         <div class="timeline-content">
                             <h4>Our Intervention</h4>
                             <p>Cybersafe Legal reported the fraud to I4C and SEBI, traced transactions with Rohan’s bank, and enrolled him in credit monitoring.
-
 </p>
                         </div>
                     </div>
@@ -3838,12 +4250,6 @@ tabBtns.forEach(btn => {
             }
         });
     });
-});
-
-// Ensure Safety Tools is selected on page load
-window.addEventListener('DOMContentLoaded', () => {
-    const defaultTabBtn = document.querySelector('.tab-btn[data-tab="tools"]');
-    if (defaultTabBtn) defaultTabBtn.click();
 });
 
     // Testimonial slider
@@ -4078,8 +4484,173 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const startChatBtn = document.getElementById('startChatBtn');
+    const chatbotWindow = document.getElementById('chatbotWindow');
 
+    startChatBtn.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
+        chatbotWindow.classList.add('active'); // Open the chatbot window
+    });
+});
 
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chatbot functionality
+            const chatbotToggle = document.getElementById('chatbotToggle');
+            const chatbotWindow = document.getElementById('chatbotWindow');
+            const chatbotClose = document.getElementById('chatbotClose');
+            const chatbotMessages = document.getElementById('chatbotMessages');
+            const chatbotInput = document.getElementById('chatbotInput');
+            const chatbotSend = document.getElementById('chatbotSend');
+            
+            // Toggle chatbot window
+            chatbotToggle.addEventListener('click', function() {
+                chatbotWindow.classList.toggle('active');
+                if (chatbotWindow.classList.contains('active') && chatbotMessages.children.length === 0) {
+                    showBotMessage("Hello! I'm your Cybersafe Legal Assistant. How can I help you today?");
+                    showQuickReplies([
+                        "What should I do if I've been scammed?",
+                        "How can I report cybercrime?",
+                        "What are common online scams?"
+                    ]);
+                }
+            });
+            
+            chatbotClose.addEventListener('click', function() {
+                chatbotWindow.classList.remove('active');
+            });
+            
+            // Send message when button is clicked
+            chatbotSend.addEventListener('click', sendMessage);
+            
+            // Send message when Enter key is pressed
+            chatbotInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            function sendMessage() {
+                const message = chatbotInput.value.trim();
+                if (message) {
+                    showUserMessage(message);
+                    chatbotInput.value = '';
+                    respondToMessage(message);
+                }
+            }
+            
+            function showUserMessage(message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', 'user-message');
+                messageDiv.textContent = message;
+                chatbotMessages.appendChild(messageDiv);
+                scrollToBottom();
+            }
+            
+            function showBotMessage(message, delay = 0) {
+                if (delay > 0) {
+                    // Show typing indicator
+                    const typingDiv = document.createElement('div');
+                    typingDiv.classList.add('typing-indicator');
+                    typingDiv.innerHTML = `
+                        <div class="message bot-message" style="visibility: hidden;"></div>
+                        <div class="typing-dots">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                    `;
+                    chatbotMessages.appendChild(typingDiv);
+                    scrollToBottom();
+                    
+                    setTimeout(() => {
+                        typingDiv.remove();
+                        const messageDiv = document.createElement('div');
+                        messageDiv.classList.add('message', 'bot-message');
+                        messageDiv.textContent = message;
+                        chatbotMessages.appendChild(messageDiv);
+                        scrollToBottom();
+                    }, delay);
+                } else {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('message', 'bot-message');
+                    messageDiv.textContent = message;
+                    chatbotMessages.appendChild(messageDiv);
+                    scrollToBottom();
+                }
+            }
+            
+            function showQuickReplies(replies) {
+                const quickRepliesDiv = document.createElement('div');
+                quickRepliesDiv.classList.add('quick-replies');
+                
+                replies.forEach(reply => {
+                    const replyButton = document.createElement('div');
+                    replyButton.classList.add('quick-reply');
+                    replyButton.textContent = reply;
+                    replyButton.addEventListener('click', function() {
+                        showUserMessage(reply);
+                        respondToMessage(reply);
+                    });
+                    quickRepliesDiv.appendChild(replyButton);
+                });
+                
+                chatbotMessages.appendChild(quickRepliesDiv);
+                scrollToBottom();
+            }
+            
+            function scrollToBottom() {
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+            
+            // Chatbot responses
+            function respondToMessage(message) {
+                // Convert message to lowercase for easier matching
+                const lowerMessage = message.toLowerCase();
+                
+                // Show typing indicator with delay
+                setTimeout(() => {
+                    if (lowerMessage.includes('scam') || lowerMessage.includes('scammed')) {
+                        showBotMessage("If you've been scammed, here's what to do immediately:\n\n1. Document everything (screenshots, emails, transactions)\n2. Contact your bank/financial institutions\n3. Change all compromised passwords\n4. File a report with local authorities\n5. Contact our legal team for next steps", 1500);
+                        showBotMessage("Would you like me to connect you with our emergency helpline?", 3000);
+                        showQuickReplies(["Yes, connect me", "No, I need more info"]);
+                    } 
+                    else if (lowerMessage.includes('report') || lowerMessage.includes('complaint')) {
+                        showBotMessage("You can report cybercrime through these channels:\n\n• Online: cybercrime.gov.in\n• Phone: National Cyber Crime Helpline (155260)\n• In person: Visit your local police station\n\nFor immediate assistance, you can call our 24/7 helpline: +91 9521154453", 1500);
+                        showQuickReplies(["What evidence do I need?", "How long does it take?"]);
+                    } 
+                    else if (lowerMessage.includes('common') || lowerMessage.includes('scams')) {
+                        showBotMessage("Common online scams include:\n\n• Phishing emails/texts\n• Romance scams\n• Investment fraud\n• Tech support scams\n• Fake online shopping deals\n• Identity theft\n• Social media impersonation", 1500);
+                        showBotMessage("You can learn more about each type in our Resources section.", 3000);
+                        showQuickReplies(["How to spot phishing?", "Tell me about romance scams"]);
+                    } 
+                    else if (lowerMessage.includes('phishing')) {
+                        showBotMessage("Phishing scams try to trick you into revealing personal information. Watch for:\n\n• Urgent or threatening language\n• Misspelled URLs or email addresses\n• Requests for passwords or OTPs\n• Unexpected attachments\n• Too-good-to-be-true offers", 1500);
+                        showQuickReplies(["I got a suspicious email", "What should I do if I clicked?"]);
+                    } 
+                    else if (lowerMessage.includes('romance')) {
+                        showBotMessage("Romance scams involve fake online relationships to extract money. Warning signs:\n\n• Quick declarations of love\n• Always an excuse not to meet\n• Requests for money (emergencies, travel, etc.)\n• Inconsistencies in their stories\n• Professional-looking but stolen photos", 1500);
+                        showQuickReplies(["I think I'm being scammed", "How to recover lost money?"]);
+                    } 
+                    else if (lowerMessage.includes('emergency') || lowerMessage.includes('helpline') || lowerMessage.includes('connect')) {
+                        showBotMessage("For immediate assistance, call our 24/7 helpline: +91 9521154453\n\nOr visit our Emergency Help section for more options.", 1500);
+                    } 
+                    else if (lowerMessage.includes('thank') || lowerMessage.includes('thanks')) {
+                        showBotMessage("You're welcome! Stay safe online. Let me know if you have any other questions.", 1500);
+                    } 
+                    else {
+                        showBotMessage("I'm sorry, I didn't understand that. Could you rephrase or choose one of these options?", 1500);
+                        showQuickReplies([
+                            "What should I do if I've been scammed?",
+                            "How can I report cybercrime?",
+                            "What are common online scams?"
+                        ]);
+                    }
+                }, 1000);
+            }
+        });
     </script>
 </body>
 </html>
